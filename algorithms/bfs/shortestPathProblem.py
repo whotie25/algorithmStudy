@@ -38,7 +38,7 @@ graph = [[0, 0, 0, 0, 1, 0, 0, 1],
          [0, 1, 0, 0, 0, 0, 1, 1],
          [0, 0, 0, 1, 0, 0, 0, 0],
          [1, 0, 1, 1, 0, 1, 1, 0]]
-start = (0, 5); end = (0, 5)
+start = (0, 5); end = (5, 0)
 
 min_distance = shortestPath(graph, start, end)
 print(min_distance)
