@@ -6,7 +6,7 @@ def basicBFS(graph, start):
     visited[start] = True # 시작 인덱스 방문 처리
 
     while queue:
-        tmp = queue.pop(0)
+        tmp = queue.pop(0) # O(n) -> deque 사용(O(1))
         res.append(tmp)
         for i in graph[tmp]:
             if not visited[i]:
