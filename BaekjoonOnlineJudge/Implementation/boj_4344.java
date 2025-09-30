@@ -28,5 +28,6 @@ public class boj_4344{
 
             System.out.printf("%.3f%%\n", (mean*100)/((float)pp));
         }
+        sc.close();
     }
 }
