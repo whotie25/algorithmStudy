@@ -4,7 +4,17 @@ import java.util.EmptyStackException;
 
 public class DS_005_ArrayStackImplementation{
     public static void main(String[] args) {
-        
+        ArrayStack<Integer> stack = new ArrayStack<>();
+		stack.push(3);	//[3]
+		stack.push(7);	//[3, 7]
+		stack.push(12);	//[3, 7, 12]
+		
+		System.out.println(stack.pop());	//[3, 7] -> 12
+		System.out.println(stack.size());	//[3, 7] -> 2
+		System.out.println(stack.peek());	//[3, 7] -> 7
+		System.out.println(stack.isEmpty());//[3, 7] -> false
+		stack.pop(); stack.pop();
+		System.out.println(stack.isEmpty());//[]	 -> true
     }
 }
 
