@@ -5,16 +5,16 @@ import java.util.EmptyStackException;
 public class DS_005_ArrayStackImplementation{
     public static void main(String[] args) {
         ArrayStack<Integer> stack = new ArrayStack<>();
-		stack.push(3);	//[3]
-		stack.push(7);	//[3, 7]
-		stack.push(12);	//[3, 7, 12]
+		stack.push(3);					 //[3]
+		stack.push(7);					 //[3, 7]
+		stack.push(12);				 //[3, 7, 12]
 		
-		System.out.println(stack.pop());	//[3, 7] -> 12
-		System.out.println(stack.size());	//[3, 7] -> 2
-		System.out.println(stack.peek());	//[3, 7] -> 7
-		System.out.println(stack.isEmpty());//[3, 7] -> false
+		System.out.println(stack.pop());	 //[3, 7] -> 12
+		System.out.println(stack.size());	 //[3, 7] -> 2
+		System.out.println(stack.peek());	 //[3, 7] -> 7
+		System.out.println(stack.isEmpty()); //[3, 7] -> false
 		stack.pop(); stack.pop();
-		System.out.println(stack.isEmpty());//[]	 -> true
+		System.out.println(stack.isEmpty()); //[]	  -> true
     }
 }
 
@@ -29,7 +29,7 @@ interface Stack<E> {
 class ArrayStack<E> implements Stack<E> {
 	//consts
 	private static final Object[] EMPTY_ARRAY = {};
-	private static final int DEFAULT_SIZE = 8;
+	private static final int DEFAULT_CAPACITY = 8;
 	
 	//vars
 	private Object[] array;
@@ -48,7 +48,7 @@ class ArrayStack<E> implements Stack<E> {
 	//inner method (resize)
 	private void resize() {
 		if(Arrays.equals(array, EMPTY_ARRAY)) {
-			array = new Object[DEFAULT_SIZE];
+			array = new Object[DEFAULT_CAPACITY];
 			return;
 		}
 		
@@ -61,7 +61,7 @@ class ArrayStack<E> implements Stack<E> {
 		}
 		if(size < curCapacity/2) {
 			int newSize = curCapacity / 2;
-			array = Arrays.copyOf(array, Math.max(DEFAULT_SIZE, newSize));
+			array = Arrays.copyOf(array, Math.max(DEFAULT_CAPACITY, newSize));
 		}
 	}
 	
