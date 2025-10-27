@@ -1,4 +1,4 @@
-package Java.AL001_Sort;
+package AL001_Sort;
 
 public class MergeSort {
     private static int[] sorted;

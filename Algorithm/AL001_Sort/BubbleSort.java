@@ -1,15 +1,15 @@
-package Java.AL001_Sort;
+package AL001_Sort;
 
-public class SelectionSort {
+public class BubbleSort {
     public static void sort(int[] seq) {
-        for(int i = 0; i < seq.length; i++) {
-            int trg = i;
-            for(int j = i+1; j < seq.length; j++) {
-                if(seq[j] < seq[trg]) trg = j;
+        for(int i = 1; i < seq.length; i++) {
+            for(int j = 0; j < seq.length - i; j++) {
+                if(seq[j] > seq[j+1]) {
+                    int tmp = seq[j+1];
+                    seq[j+1] = seq[j];
+                    seq[j] = tmp;
+                }
             }
-            int tmp = seq[trg];
-            seq[trg] = seq[i];
-            seq[i] = tmp;
         }
     }
 
