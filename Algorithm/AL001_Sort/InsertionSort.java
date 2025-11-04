@@ -28,7 +28,9 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         int[] seq_A = {4, 1, 6, 9, 2, 5, 3, 8, 7};
+        System.out.printf("Original Array : %s\n", toString(seq_A));
+
         sort(seq_A);
-        System.out.println(toString(seq_A));
+        System.out.printf("Sorted Array :   %s", toString(seq_A));
     }
 }
